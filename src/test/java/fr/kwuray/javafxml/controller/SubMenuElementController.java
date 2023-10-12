@@ -1,6 +1,5 @@
 package fr.kwuray.javafxml.controller;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,17 +11,13 @@ import java.io.IOException;
 
 /** This {@code SceneController} is used to control the main menu scene.
  */
-public class MainMenuController extends SceneController
+public class SubMenuElementController extends ElementController
 {
 
-	
-	/**
-	 * MainMenuController constructor.
-	 * @param stage, a {@code Stage} used to show the current Scene.
-	 */
-	public MainMenuController(Stage stage)
+
+	public SubMenuElementController()
 	{
-		super(System.getProperty("user.dir") + "/res/MainMenu.fxml","Menu principal", stage);
+		super(System.getProperty("user.dir") + "/res/MainMenu.fxml");
 	}
 
 	/**
@@ -48,12 +43,11 @@ public class MainMenuController extends SceneController
 
 	public void addChild()
 	{
-		SubMenuElementController e = new SubMenuElementController();
+		ElementController e = new SubMenuElementController();
 		try {
 			e.updateStage();
 			VBox v = (VBox)(this.root);
 			v.getChildren().add(e.root);
-			e.addChild();
 		} catch (IOException ex) {
 			throw new RuntimeException(ex);
 		}

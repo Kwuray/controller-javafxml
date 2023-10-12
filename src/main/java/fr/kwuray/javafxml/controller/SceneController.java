@@ -62,4 +62,20 @@ public abstract class SceneController extends Controller
 	{
 		return stage;
 	}
+
+	/**
+	 * @return the {@code String} controller's title
+	 */
+	public String getTitle()
+	{
+		return title;
+	}
+
+	/**
+	 * @return the {@code Scene} controller's scene
+	 */
+	public Scene getScene()
+	{
+		return scene;
+	}
 }

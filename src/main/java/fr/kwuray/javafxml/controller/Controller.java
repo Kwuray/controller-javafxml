@@ -3,6 +3,7 @@ package fr.kwuray.javafxml.controller;
 import javafx.scene.Parent;
 
 import javax.swing.*;
+import java.io.IOException;
 
 /** 
  * This abstract class set the minimum requirement to be a JavaFXML controller
@@ -28,6 +29,12 @@ public abstract class Controller
 	{
 		this.fxmlPath = fxmlPath;
 	}
+
+	/**
+	 * This method load the FXML element into the {@code Stage} attribute.
+	 * @throws IOException in case of problem with the file path.
+	 */
+	public abstract void updateStage() throws IOException;
 
 	/** 
 	 * That method is called by the {@code FXMLLoader}, it generally used to add all the event handler.

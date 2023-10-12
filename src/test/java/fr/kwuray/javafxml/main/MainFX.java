@@ -1,7 +1,6 @@
 package fr.kwuray.javafxml.main;
 
 import fr.kwuray.javafxml.controller.MainMenuController;
-import fr.kwuray.javafxml.controller.SceneController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -12,11 +11,12 @@ public class MainFX extends Application {
 
     public void start(Stage stage)
     {
-        SceneController controller = new MainMenuController(stage);
+        MainMenuController controller = new MainMenuController(stage);
         try
         {
             controller.updateStage();
             controller.getStage().show();
+            controller.addChild();
         }
         catch (IOException e)
         {

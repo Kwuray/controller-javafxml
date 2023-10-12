@@ -8,29 +8,24 @@ import java.io.IOException;
 /** 
  * This abstract class set the minimum requirement to be a FXML Element controller
  */
-public abstract class ElementController extends Controller {
-
-	/**
-	 * Element controller's parent
-	 */
-	protected SceneController parentController;
+public abstract class ElementController extends Controller
+{
 	
 	/**
 	 * Element controller constructor.
 	 * @param fxmlPath a {@code String} representing the fxml file path.
-	 * @param parentController a {@code SceneController} representing the element controller's parent
 	 */
-	public ElementController(String fxmlPath, SceneController parentController)
+	public ElementController(String fxmlPath)
 	{
 		super(fxmlPath);
-		this.parentController = parentController;
 	}
 	
 	/**
 	 * This method load the FXML element into the {@code Parent} root attribute.
 	 * @throws IOException in case of problem with the file path.
 	 */
-	protected final void loadElement() throws IOException {
+	public final void updateStage() throws IOException
+	{
 		FXMLLoader loader = new FXMLLoader(new File(this.fxmlPath).toURI().toURL());
 		loader.setController(this);
 		this.root = loader.load();
