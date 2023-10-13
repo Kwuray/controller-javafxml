@@ -31,7 +31,7 @@ public class SubMenuElementController extends ElementController
 	/**
 	 * Add all the event handler needed
 	 */
-	protected void initialize()
+	public void initialize()
 	{
 		//Do something
 		this.mainButton.addEventHandler(ActionEvent.ACTION, a -> {

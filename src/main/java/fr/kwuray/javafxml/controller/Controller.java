@@ -39,6 +39,11 @@ public abstract class Controller
 	/** 
 	 * That method is called by the {@code FXMLLoader}, it generally used to add all the event handler.
 	 */
-	protected abstract void initialize();
+	public abstract void initialize();
+
+	public Parent getRoot()
+	{
+		return this.root;
+	}
 
 }

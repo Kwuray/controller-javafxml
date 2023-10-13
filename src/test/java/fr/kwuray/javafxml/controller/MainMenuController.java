@@ -36,7 +36,7 @@ public class MainMenuController extends SceneController
 	/**
 	 * Add all the event handler needed
 	 */
-	protected void initialize()
+	public void initialize()
 	{
 		//Do something
 		this.mainButton.addEventHandler(ActionEvent.ACTION, a -> {
